@@ -1,5 +1,5 @@
 pytest
-webtest
-sphinx
+pytest-pep8
+pytest-flakes
+pytest-cov
 tox
-coverage==4.0.3
