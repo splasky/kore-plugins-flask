@@ -1,0 +1,5 @@
+pytest
+webtest
+sphinx
+tox
+coverage==4.0.3
