@@ -23,3 +23,10 @@ class TestApplication(object):
         assert rv.status_code == 200
         assert sorted(rv.allow) == sorted(methods + ['HEAD', 'OPTIONS'])
         assert data == b"Hello World!"
+
+    def test_application(self, application, flask_config):
+        assert application.instance_path == flask_config['instance_path']
+        assert application.root_path == flask_config['root_path']
+
+        assert application.config['DEBUG'] == flask_config['DEBUG']
+        assert application.config['SECRET_KEY'] == flask_config['SECRET_KEY']

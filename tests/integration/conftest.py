@@ -6,14 +6,16 @@ from kore import config_factory, container_factory
 @pytest.fixture(scope='session')
 def flask_config():
     return {
-        'instance_path': None,
+        'instance_path': '/',
         'root_path': './',
+        'DEBUG': True,
+        'SECRET_KEY': 'verysecretkey',
     }
 
 
 @pytest.fixture(scope='session')
 def config(flask_config):
-    return config_factory.create('dict', {'flask': flask_config})
+    return config_factory.create('dict', **{'flask': flask_config})
 
 
 @pytest.fixture
