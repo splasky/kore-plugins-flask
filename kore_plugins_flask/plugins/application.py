@@ -26,8 +26,10 @@ class FlaskApplicationPluginComponent(BasePluginComponent):
         instance_path = config.get('instance_path', None)
         root_path = config.get('root_path', None)
 
-        return Flask(
+        app = Flask(
             __name__,
             instance_path=instance_path,
             root_path=root_path,
         )
+        app.config.from_mapping(**config)
+        return app
