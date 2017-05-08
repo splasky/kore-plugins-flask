@@ -1,6 +1,6 @@
 __author__ = 'Artur Maciąg'
 __email__ = 'maciag.artur@gmail.com'
-__version__ = '0.0.3'
+__version__ = '0.0.4'
 __url__ = 'https://github.com/kore-plugins/kore-plugins-flask'
 
 from kore import config_factory, container_factory
